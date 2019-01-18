@@ -1,0 +1,20 @@
+
+Ysquid:S3398"?Move this method into the anonymous class declared at line 131.(ù‰Æùÿÿÿÿ
+Ysquid:S3398"?Move this method into the anonymous class declared at line 131.(÷²ŞÂúÿÿÿÿ
+Lsquid:S1068"2Remove this unused "messageHandler" private field.(şøûùÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(˜ÒÈßøÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(§íÜÖøÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(˜ÒÈßøÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ñÒ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ôö’€
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¥ÍÓıÿÿÿÿ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ù­ó§
+Msquid:S1481"9Remove this unused "mainScreenController" local variable.(ùî£
+[squid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+Qsquid:S1854"<Remove this useless assignment to local variable "response".(Šœƒ¬
+\squid:S1854"HRemove this useless assignment to local variable "mainScreenController".(ùî£
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Osquid:S1161":Add the "@Override" annotation above this method signature(“–ış

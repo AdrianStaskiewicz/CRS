@@ -1,0 +1,14 @@
+
+gsquid:S1192"RDefine a constant instead of duplicating this literal "05122018/2018/01" 20 times.(©ˆ£ç
+csquid:S1192"NDefine a constant instead of duplicating this literal "Kowalski Jan" 20 times.(©ˆ£ç
+^squid:S1192"IDefine a constant instead of duplicating this literal "PO25684" 20 times.(©ˆ£ç
+]squid:S1192"HDefine a constant instead of duplicating this literal "bbbbbb" 20 times.(©ˆ£ç
+]squid:S1192"HDefine a constant instead of duplicating this literal "aaaaaa" 20 times.(©ˆ£ç
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(˜ÒÈßøÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÛÜðëùÿÿÿÿ
+"squid:ClassVariableVisibilityCheck"PMake data a static final constant or non-public and provide accessors if needed.(ôÄÇ¿úÿÿÿÿ
+asquid:S1481"GRemove this unused "serviceRequestEditScreenController" local variable.(ÖæÂ‚ýÿÿÿÿ
+›squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(³Ñ÷ýýÿÿÿÿ
+›squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‹ÇèÛýÿÿÿÿ
+psquid:S1854"VRemove this useless assignment to local variable "serviceRequestEditScreenController".(ÖæÂ‚ýÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

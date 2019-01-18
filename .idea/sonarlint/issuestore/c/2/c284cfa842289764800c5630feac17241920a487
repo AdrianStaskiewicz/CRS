@@ -1,0 +1,32 @@
+
+Psquid:EmptyStatementUsageCheck"Remove this empty statement.(Åñ­õşÿÿÿÿ8äÙ¡˜…-
+ksquid:S4488"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ò–™¹ıÿÿÿÿ8äÙ¡˜…-
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(–ÿ›á8äÙ¡˜…-
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(½—¹è8äÙ¡˜…-
+osquid:S4144"SUpdate this method so that its implementation is not identical to "get" on line 53.(‡„8äÙ¡˜…-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(üÿ—õúÿÿÿÿ8äÙ¡˜…-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(»ßë¹8äÙ¡˜…-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(…¨¬Ûùÿÿÿÿ8äÙ¡˜…-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ï¬Ğñ8äÙ¡˜…-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(”İ¹º8äÙ¡˜…-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ı¹ü8äÙ¡˜…-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ä©´õùÿÿÿÿ8äÙ¡˜…-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ö¡Éş8äÙ¡˜…-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ãŸúùÿÿÿÿ8äÙ¡˜…-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(½Óš‹ùÿÿÿÿ8äÙ¡˜…-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÈŞ¤„8äÙ¡˜…-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¯Ùç¿şÿÿÿÿ8äÙ¡˜…-
+squid:S1488"eImmediately return this expression instead of assigning it to the temporary variable "addressesList".(êÌ©›8äÙ¡˜…-
+†squid:S1488"eImmediately return this expression instead of assigning it to the temporary variable "companiesList".(´øì„şÿÿÿÿ8äÙ¡˜…-
+squid:S1488"^Immediately return this expression instead of assigning it to the temporary variable "result".(¢›¤õşÿÿÿÿ8äÙ¡˜…-
+Fsquid:S1481"*Remove this unused "query" local variable.(ÔÏ¦8äÙ¡˜…-
+Fsquid:S1481"*Remove this unused "query" local variable.(ÔÏ¦8äÙ¡˜…-
+Lsquid:S1481"0Remove this unused "addressList" local variable.(ãœáÕ8äÙ¡˜…-
+Hsquid:S1481"'Remove this unused "ad" local variable.(ëåôšıÿÿÿÿ8äÙ¡˜…-
+Gsquid:S1168"+Return an empty collection instead of null.(¥¹ï8äÙ¡˜…-
+Gsquid:S1168"+Return an empty collection instead of null.(¥¹ï8äÙ¡˜…-
+Usquid:S1854"9Remove this useless assignment to local variable "query".(ÔÏ¦8äÙ¡˜…-
+Usquid:S1854"9Remove this useless assignment to local variable "query".(ÔÏ¦8äÙ¡˜…-
+Wsquid:S1854"6Remove this useless assignment to local variable "ad".(ëåôšıÿÿÿÿ8äÙ¡˜…-
+[squid:S1854"?Remove this useless assignment to local variable "addressList".(ãœáÕ8äÙ¡˜…-
+\squid:UselessImportCheck"3Remove this unused import 'dtos.ServiceRequestDto'.(æªÛ8äÙ¡˜…-

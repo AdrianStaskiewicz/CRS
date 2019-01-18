@@ -1,0 +1,10 @@
+.icon{
+    -fx-background-color: #000000;
+    -fx-background-radius: 0,0,0;
+    -fx-background-insets: 0,0,0;
+    -fx-text-fill: white;
+}
+
+.icon:hover{
+-fx-opacity: 0.5;
+}

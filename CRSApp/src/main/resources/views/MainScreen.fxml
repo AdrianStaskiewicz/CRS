@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainScreenController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="45.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <GridPane>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="27.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <MenuBar fx:id="mainMenu" styleClass="menu-bar" stylesheets="@/styles/MenuStyle.css">
+                            <menus>
+                                <Menu fx:id="submenuModules" styleClass="menu-item" mnemonicParsing="false" text="Moduły">
+                                    <items>
+                                        <Menu fx:id="submenuServiceRequests" mnemonicParsing="false" text="Serwis">
+                                            <items>
+                                                <MenuItem fx:id="serviceRequestsMenuPosition" mnemonicParsing="false" onAction="#onServiceRequestsMenuPosition" text="Zg�oszenia serwisowe" />
+                                            </items>
+                                        </Menu>
+                                        <Menu fx:id="submenuSpareparts" mnemonicParsing="false" text="Części zamienne">
+                                            <items>
+                                                <MenuItem fx:id="merchandiseOrdersMenuPosition" mnemonicParsing="false" onAction="#onMerchandiseOrdersMenuPosition" text="Zamówienia" />
+                                            </items>
+                                        </Menu>
+                                    </items>
+                                </Menu>
+                                <Menu fx:id="submenuFiles" mnemonicParsing="false" text="Kartoteki">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" styleClass="submenu" onAction="#onCustomerFileMenuPosition" text="Kartoteka klientów" />
+                                        <MenuItem mnemonicParsing="false" styleClass="submenu" onAction="#onVehicleFileMenuPosition" text="Kartoteka pojazdów" />
+                                    </items>
+                                </Menu>
+                                <Menu fx:id="submenuSystem" mnemonicParsing="false" text="System">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="Konfiguracja" />
+                                        <MenuItem mnemonicParsing="false" text="Uprawnienia" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </MenuBar>
+                        <GridPane GridPane.rowIndex="1">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="80.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #000000;">
+                                    <children>
+                                        <Button fx:id="startButton" contentDisplay="CENTER" maxHeight="45.0" maxWidth="45.0" mnemonicParsing="false" onAction="#onBackToStart" prefHeight="45.0" prefWidth="45.0" styleClass="icon" stylesheets="@/styles/IconStyle.css" text=" " textFill="#ffffff">
+                                            <graphic>
+                                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="icons/shop_icon.png"/>
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor></Button>
+                                        <Button fx:id="serviceRequestButton" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="45.0" maxWidth="45.0" mnemonicParsing="false" onAction="#onServiceRequestShortcut" prefHeight="45.0" prefWidth="45.0" styleClass="icon" stylesheets="@/styles/IconStyle.css" text=" " textFill="#ffffff">
+                                            <graphic>
+                                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="icons/tools_icon.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor></Button>
+                                        <Button contentDisplay="CENTER" onAction="#onCustomerFileShortcut" layoutX="55.0" layoutY="10.0" maxHeight="45.0" maxWidth="45.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" styleClass="icon" stylesheets="@/styles/IconStyle.css" text=" " textFill="#ffffff">
+                                            <graphic>
+                                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="icons/document_icon.png"/>
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor></Button>
+                                        <Button contentDisplay="CENTER" onAction="#onVehicleFileShortcut" layoutX="100.0" layoutY="10.0" maxHeight="45.0" maxWidth="45.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" styleClass="icon" stylesheets="@/styles/IconStyle.css" text=" " textFill="#ffffff">
+                                            <graphic>
+                                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="icons/cover_icon.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor></Button>
+                                        <Button contentDisplay="CENTER" layoutX="145.0" layoutY="10.0" maxHeight="45.0" maxWidth="45.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" styleClass="icon" stylesheets="@/styles/IconStyle.css" text="Button" textFill="#ffffff">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor></Button>
+                                        <Button layoutX="190.0" layoutY="10.0" maxHeight="45.0" maxWidth="45.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" styleClass="icon" stylesheets="@/styles/IconStyle.css" text="Button" textFill="#ffffff">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor></Button>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #000000;" GridPane.columnIndex="1">
+                                    <children>
+                                        <Button maxHeight="45.0" maxWidth="80.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="80.0" text="Log out">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor></Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </GridPane>
+                    </children>
+                </GridPane>
+            </children>
+        </GridPane>
+        <StackPane fx:id="mainStackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.rowIndex="1" />
+        <GridPane GridPane.rowIndex="2">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Separator prefWidth="200.0" />
+                        <GridPane>
+                            <columnConstraints>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Button fx:id="companyContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Company">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                                <Button fx:id="divisionContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Division" GridPane.columnIndex="1">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                                <Button fx:id="employeeContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Employee" GridPane.columnIndex="2">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                                <SplitMenuButton fx:id="languageSelector" cache="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" popupSide="TOP" text="Język" GridPane.columnIndex="3">
+                                    <items>
+                                        <MenuItem fx:id="polishLanguage" mnemonicParsing="false" text="polski" />
+                                        <MenuItem fx:id="englishLanguage" mnemonicParsing="false" text="angielski" />
+                                    </items>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <rotationAxis>
+                                        <Point3D y="1.0" />
+                                    </rotationAxis>
+                                    <GridPane.margin>
+                                        <Insets />
+                                    </GridPane.margin>
+                                </SplitMenuButton>
+                            </children>
+                            <padding>
+                                <Insets right="20.0" />
+                            </padding>
+                        </GridPane>
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
+    </children>
+</GridPane>
