@@ -1,12 +1,11 @@
-.icon{
-    -fx-background-color: #000000;
+.standard{
+    -fx-background-color: #bfbfbf;
     -fx-background-radius: 0,0,0;
     -fx-background-insets: 0,0,0;
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
-
-.icon:hover{
--fx-opacity: 0.5;
+.standard:hover{
+    -fx-opacity:0.8;
 }
 
 .specialRed{
@@ -18,5 +17,5 @@
     -fx-font: Calibri Bold;
 }
 .specialRed:hover{
-    -fx-opacity:0.9;
+    -fx-opacity:0.8;
 }

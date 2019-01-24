@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import parameters.ViewPath;
@@ -93,9 +94,18 @@ public class CustomerFileScreenController extends AbstractScreenController imple
 
         customerFileDataTable.setItems(data);
         customerFileDataTable.getSelectionModel();
+
+        customerFileDataTable.setOnMousePressed((event) -> {
+            if (event.getButton().equals(MouseButton.PRIMARY)) {
+                if (event.getClickCount() == 2) {
+                    onModifyPositionButton();
+                }
+            }
+        });
     }
 
-    public void navigateTo(String viewPath){
+
+    public void navigateTo(String viewPath) {
         FXMLLoader innerLoader = new FXMLLoader();
         innerLoader.setLocation(this.getClass().getResource(viewPath));
 //        ResourceBundle bundle = ResourceBundle.getBundle("gui.resources.lang");
@@ -109,14 +119,12 @@ public class CustomerFileScreenController extends AbstractScreenController imple
         }
         CustomerAddEditScreenController controller = innerLoader.getController();
         controller.setMainScreenController(mainScreenController);
-//        loginScreenController.setMainScreenController(this);
-//        loginScreenController.setLocalDatabase(this.localDatabase);
-//        loginScreenController.setClient(this.client);
+//        set objects here
 
         mainScreenController.setView(gridPane);
     }
 
-    private void navigateTo(String viewPath, Integer objectId){
+    private void navigateTo(String viewPath, Integer objectId) {
         FXMLLoader innerLoader = new FXMLLoader();
         innerLoader.setLocation(this.getClass().getResource(viewPath));
 //        ResourceBundle bundle = ResourceBundle.getBundle("gui.resources.lang");
@@ -131,10 +139,7 @@ public class CustomerFileScreenController extends AbstractScreenController imple
         CustomerAddEditScreenController controller = innerLoader.getController();
         controller.setMainScreenController(mainScreenController);
         controller.initData(objectId);
-
-//        loginScreenController.setMainScreenController(this);
-//        loginScreenController.setLocalDatabase(this.localDatabase);
-//        loginScreenController.setClient(this.client);
+//        set objects here
 
         mainScreenController.setView(gridPane);
     }

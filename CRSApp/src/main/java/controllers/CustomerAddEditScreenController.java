@@ -171,9 +171,7 @@ public class CustomerAddEditScreenController extends AbstractScreenController {
         }
         CustomerFileScreenController controller = innerLoader.getController();
         controller.setMainScreenController(mainScreenController);
-//        loginScreenController.setMainScreenController(this);
-//        loginScreenController.setLocalDatabase(this.localDatabase);
-//        loginScreenController.setClient(this.client);
+//        set objects here
 
         mainScreenController.setView(gridPane);
     }

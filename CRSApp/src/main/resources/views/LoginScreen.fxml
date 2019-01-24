@@ -83,16 +83,13 @@
                                     </font>
                                 </PasswordField>
                                 <Separator prefWidth="200.0" />
-                                <Button fx:id="loginButton" alignment="CENTER" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #f00000;" text="Zaloguj się" textAlignment="CENTER" textFill="WHITE">
-                                    <font>
-                                        <Font name="Calibri Bold" size="14.0" />
-                                    </font>
+                                <Button fx:id="loginButton" alignment="CENTER" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #f00000;" styleClass="specialRed" stylesheets="@/styles/ButtonStyle.css" text="Zaloguj się" textAlignment="CENTER" textFill="WHITE">
                                     <cursor>
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
                                 <Separator prefWidth="200.0" />
-                                <Button fx:id="remindPasswordButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="20.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" onAction="#onRemindPasswordClick" prefHeight="20.0" prefWidth="225.0" text="Przypomnienie hasła" textAlignment="CENTER">
+                                <Button fx:id="remindPasswordButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="20.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" onAction="#onRemindPasswordClick" prefHeight="20.0" prefWidth="225.0" styleClass="standard" stylesheets="@/styles/ButtonStyle.css" text="Przypomnienie hasła" textAlignment="CENTER">
                                     <font>
                                         <Font name="Calibri" size="11.0" />
                                     </font>

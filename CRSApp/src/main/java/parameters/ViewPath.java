@@ -6,4 +6,6 @@ public class ViewPath {
     public static final String CUSTOMER_FILES_SCREEN = "/views/CustomerFileScreen.fxml";
     public static final String VEHICLE_FILES_SCREEN= "/views/VehicleFileScreen.fxml";
     public static final String CUSTOMER_ADD_EDIT_SCREEN= "/views/CustomerAddEditScreen.fxml";
+    public static final String VEHICLE_ADD_EDIT_SCREEN= "/views/VehicleAddEditScreen.fxml";
+    public static final String LOGIN_SCREEN= "/views/LoginScreen.fxml";
 }

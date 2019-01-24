@@ -81,7 +81,7 @@
                         <GridPane GridPane.rowIndex="1">
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="80.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="110.0" />
                             </columnConstraints>
                             <rowConstraints>
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -93,7 +93,7 @@
                                             <graphic>
                                                 <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="icons/shop_icon.png"/>
+                                                        <Image url="icons/home_icon.png"/>
                                                     </image>
                                                 </ImageView>
                                             </graphic>
@@ -133,11 +133,25 @@
                                             <cursor>
                                                 <Cursor fx:constant="HAND" />
                                             </cursor></Button>
-                                        <Button contentDisplay="CENTER" layoutX="145.0" layoutY="10.0" maxHeight="45.0" maxWidth="45.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" styleClass="icon" stylesheets="@/styles/IconStyle.css" text="Button" textFill="#ffffff">
+                                        <Button contentDisplay="CENTER" layoutX="145.0" layoutY="10.0" maxHeight="45.0" maxWidth="45.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" styleClass="icon" stylesheets="@/styles/IconStyle.css" text=" " textFill="#ffffff">
+                                            <graphic>
+                                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="icons/engine_icon.png"/>
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
                                             <cursor>
                                                 <Cursor fx:constant="HAND" />
                                             </cursor></Button>
-                                        <Button layoutX="190.0" layoutY="10.0" maxHeight="45.0" maxWidth="45.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" styleClass="icon" stylesheets="@/styles/IconStyle.css" text="Button" textFill="#ffffff">
+                                        <Button layoutX="190.0" layoutY="10.0" maxHeight="45.0" maxWidth="45.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" styleClass="icon" stylesheets="@/styles/IconStyle.css" text=" " textFill="#ffffff">
+                                            <graphic>
+                                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="icons/time_icon.png"/>
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
                                             <cursor>
                                                 <Cursor fx:constant="HAND" />
                                             </cursor></Button>
@@ -145,7 +159,14 @@
                                 </HBox>
                                 <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #000000;" GridPane.columnIndex="1">
                                     <children>
-                                        <Button maxHeight="45.0" maxWidth="80.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="80.0" text="Log out">
+                                        <Button contentDisplay="RIGHT" onAction="#onLogOut" maxHeight="45.0" maxWidth="110.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="110.0" styleClass="specialRed" stylesheets="@/styles/IconStyle.css" text="Wyloguj">
+                                            <graphic>
+                                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="icons/logout_icon.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
                                             <cursor>
                                                 <Cursor fx:constant="HAND" />
                                             </cursor></Button>
@@ -180,25 +201,46 @@
                                 <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Button fx:id="companyContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Company">
+                                <Button fx:id="companyContext" contentDisplay="LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="250.0" styleClass="standardContextLabel" stylesheets="@/styles/ContextLabelStyle.css" text=" ">
+                                    <graphic>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="icons/shop_icon_black.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
                                     <cursor>
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                                <Button fx:id="divisionContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Division" GridPane.columnIndex="1">
+                                <Button fx:id="divisionContext" contentDisplay="LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="250.0" styleClass="standardContextLabel" stylesheets="@/styles/ContextLabelStyle.css" text=" " GridPane.columnIndex="1">
+                                    <graphic>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="icons/division_icon.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
                                     <cursor>
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                                <Button fx:id="employeeContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Employee" GridPane.columnIndex="2">
+                                <Button fx:id="employeeContext" contentDisplay="LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="250.0" styleClass="standardContextLabel" stylesheets="@/styles/ContextLabelStyle.css" text=" " GridPane.columnIndex="2">
+                                    <graphic>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="icons/mechanic_icon_black.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
                                     <cursor>
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                                <SplitMenuButton fx:id="languageSelector" cache="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" popupSide="TOP" text="Język" GridPane.columnIndex="3">
+                                <SplitMenuButton fx:id="languageSelector" cache="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" popupSide="TOP" styleClass="standard" stylesheets="@/styles/ButtonStyle.css" text="Język" GridPane.columnIndex="3">
                                     <items>
-                                        <MenuItem fx:id="polishLanguage" mnemonicParsing="false" text="polski" />
-                                        <MenuItem fx:id="englishLanguage" mnemonicParsing="false" text="angielski" />
+                                        <MenuItem fx:id="polishLanguage" mnemonicParsing="false" styleClass="standard" text="polski" />
+                                        <MenuItem fx:id="englishLanguage" mnemonicParsing="false" styleClass="standard" text="angielski" />
                                     </items>
                                     <cursor>
                                         <Cursor fx:constant="HAND" />

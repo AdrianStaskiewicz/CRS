@@ -103,3 +103,5 @@ k
 ;CRSApp/src/main/java/controllers/LoginScreenController.java,5\1\51ef6634ea513323705067e4ceabc07c8dbb2586
 u
 ECRSApp/src/main/java/controllers/CustomerAddEditScreenController.java,f\8\f8b89693518352b70dfb567143928aca1ca22eb8
+`
+0CRSApp/src/main/resources/styles/ButtonStyle.css,7\1\718c3f488af87a5331b07b5f2fac1ad0d6b692a0

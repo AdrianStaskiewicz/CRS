@@ -43,18 +43,18 @@
             <children>
                 <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="addPositionButton" mnemonicParsing="false" onAction="#onAddPositionButton" text="Zapisz i zamknij" />
+                        <Button fx:id="addPositionButton" mnemonicParsing="false" onAction="#onAddPositionButton" styleClass="standard" stylesheets="@/styles/ButtonStyle.css" text="Zapisz i zamknij" />
                         <Separator orientation="VERTICAL" />
-                        <Button fx:id="modifyPositionButton" mnemonicParsing="false" onAction="#onModifyPositionButton" text="Zapisz" />
+                        <Button fx:id="modifyPositionButton" mnemonicParsing="false" onAction="#onModifyPositionButton" styleClass="standard" stylesheets="@/styles/ButtonStyle.css" text="Zapisz" />
                         <Separator orientation="VERTICAL" />
-                        <MenuButton fx:id="printDocumentButton" mnemonicParsing="false" text="Drukuj">
+                        <MenuButton fx:id="printDocumentButton" mnemonicParsing="false" styleClass="standard" stylesheets="@/styles/ButtonStyle.css" text="Drukuj">
                             <items>
-                                <MenuItem mnemonicParsing="false" text="dokument przyj�cia zg�oszenia" />
-                                <MenuItem mnemonicParsing="false" text="dokument przyj�cia zlecenia" />
+                                <MenuItem mnemonicParsing="false" styleClass="standard" text="dokument przyj�cia zg�oszenia" />
+                                <MenuItem mnemonicParsing="false" styleClass="standard" text="dokument przyj�cia zlecenia" />
                             </items>
                         </MenuButton>
                         <Separator orientation="VERTICAL" />
-                        <Button fx:id="deletePositionButton" mnemonicParsing="false" onAction="#onDeletePositionButton" text="Zamknij" />
+                        <Button fx:id="deletePositionButton" mnemonicParsing="false" onAction="#onDeletePositionButton" styleClass="standard" stylesheets="@/styles/ButtonStyle.css" text="Zamknij" />
                     </children>
                 </HBox>
                 <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">

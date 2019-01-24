@@ -1,15 +1,20 @@
 package controllers;
 
+import context.ContextHandler;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.WindowEvent;
 import lombok.Getter;
 import parameters.ViewPath;
 
@@ -43,12 +48,16 @@ public class MainScreenController implements Initializable {
     private Button serviceRequestButton;
 
     @FXML
+    private Button companyContext;
+    @FXML
+    private Button divisionContext;
+    @FXML
+    private Button employeeContext;
+
+    @FXML
     private StackPane mainStackPane;
 
-    //    @FXML
-//    private StackPane mainStackPane;
-//    @Getter
-//    private ClientPrim client;
+    private ContextHandler contextHandler;
 
     public void setView(GridPane gridPane) {
         mainStackPane.getChildren().clear();
@@ -57,17 +66,10 @@ public class MainScreenController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        Image playI=new Image("icons/battery_icon.png");
-//        ImageView iv1=new ImageView(playI);
-//        iv1.setFitHeight(25);
-//        iv1.setFitWidth(25);
-//
-//        button1.setGraphic(new ImageView(playI));
     }
 
     @FXML
     void onServiceRequestsMenuPosition() {
-//        navigateTo(ViewPath.SERVICE_REQUEST_SCREEN);
         FXMLLoader innerLoader = new FXMLLoader();
         innerLoader.setLocation(this.getClass().getResource("/views/ServiceRequestScreen.fxml"));
 //        ResourceBundle bundle = ResourceBundle.getBundle("gui.resources.lang");
@@ -80,16 +82,13 @@ public class MainScreenController implements Initializable {
             e.printStackTrace();
         }
         ServiceRequestScreenController serviceRequestScreenController = innerLoader.getController();
-//        loginScreenController.setMainScreenController(this);
-//        loginScreenController.setLocalDatabase(this.localDatabase);
-//        loginScreenController.setClient(this.client);
+//        set objects here
 
         serviceRequestScreenController.setMainScreenController(this);
         setView(gridPane);
     }
 
     public void onVehicleFileMenuPosition(){
-        //        navigateTo(ViewPath.SERVICE_REQUEST_SCREEN);
         FXMLLoader innerLoader = new FXMLLoader();
         innerLoader.setLocation(this.getClass().getResource(ViewPath.VEHICLE_FILES_SCREEN));
 //        ResourceBundle bundle = ResourceBundle.getBundle("gui.resources.lang");
@@ -102,9 +101,7 @@ public class MainScreenController implements Initializable {
             e.printStackTrace();
         }
         VehicleFileScreenController controller = innerLoader.getController();
-//        loginScreenController.setMainScreenController(this);
-//        loginScreenController.setLocalDatabase(this.localDatabase);
-//        loginScreenController.setClient(this.client);
+//        set objects here
 
         controller.setMainScreenController(this);
         setView(gridPane);
@@ -124,6 +121,7 @@ public class MainScreenController implements Initializable {
         }
         CustomerFileScreenController controller = innerLoader.getController();
         controller.setMainScreenController(this);
+//        set objects here
 
         setView(gridPane);
     }
@@ -155,9 +153,7 @@ public class MainScreenController implements Initializable {
         }
 
         CustomerFileScreenController controller = innerLoader.getController();//TO DO
-//        loginScreenController.setMainScreenController(this);
-//        loginScreenController.setLocalDatabase(this.localDatabase);
-//        loginScreenController.setClient(this.client);
+//        set objects here
 
         controller.setMainScreenController(this);
         setView(gridPane);
@@ -177,9 +173,7 @@ public class MainScreenController implements Initializable {
             e.printStackTrace();
         }
        VehicleFileScreenController controller = innerLoader.getController();
-//        loginScreenController.setMainScreenController(this);
-//        loginScreenController.setLocalDatabase(this.localDatabase);
-//        loginScreenController.setClient(this.client);
+//        set objects here
 
         controller.setMainScreenController(this);
         setView(gridPane);
@@ -187,7 +181,7 @@ public class MainScreenController implements Initializable {
 
     @FXML
     void onBackToStart() {
-
+        mainStackPane.getChildren().clear();
     }
 
     private void navigateTo(String viewPath){
@@ -204,9 +198,7 @@ public class MainScreenController implements Initializable {
         }
 
         ServiceRequestScreenController controller = innerLoader.getController();
-//        loginScreenController.setMainScreenController(this);
-//        loginScreenController.setLocalDatabase(this.localDatabase);
-//        loginScreenController.setClient(this.client);
+        //        set objects here
 
         controller.setMainScreenController(this);
         setView(gridPane);
@@ -216,7 +208,44 @@ public class MainScreenController implements Initializable {
     void onMerchandiseOrdersMenuPosition() {
     }
 
-//    public void setClient(ClientPrim client) {
-//        this.client = client;
-//    }
+    @FXML
+    public void onLogOut() {
+        this.mainStackPane.getParent().getScene();
+        FXMLLoader innerLoader = new FXMLLoader();
+        innerLoader.setLocation(this.getClass().getResource("/views/LoginScreen.fxml"));
+//        ResourceBundle bundle = ResourceBundle.getBundle("gui.resources.lang");
+//        innerLoader.setResources(bundle);
+
+        try {
+            Parent innerRoot = innerLoader.load();
+            LoginScreenController controller = innerLoader.getController();
+//        set objects here
+
+            Scene scene=this.mainStackPane.getParent().getScene();
+            controller.setScene(scene);
+            scene.setRoot(innerRoot);
+//            stage.setScene(scene);
+//            stage.setMaximized(true);
+//            stage.show();
+
+//            stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+//                public void handle(WindowEvent we) {
+//                    System.out.println("Stage is closing");
+//                    checkConnection = Boolean.FALSE;
+//                }
+//            });
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void setContextView(String context, String company, String employee){
+        companyContext.setText(context);
+        divisionContext.setText(company);
+        employeeContext.setText(employee);
+    }
+
 }

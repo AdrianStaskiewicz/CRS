@@ -1,5 +1,7 @@
 package controllers;
 
+import dtos.AccountDto;
+import entities.Employee;
 import errors.ErrorCode;
 import javafx.concurrent.Task;
 import javafx.event.EventHandler;
@@ -19,6 +21,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import lombok.Getter;
 import lombok.Setter;
+import repositories.AuthorizationRepository;
 import services.ConnectionService;
 
 import java.io.IOException;
@@ -57,7 +60,7 @@ public class LoginScreenController {
     public Thread thread = new Thread() {
         public void run() {
             ConnectionService connectionService = new ConnectionService();
-            checkConnection=Boolean.TRUE;
+            checkConnection = Boolean.TRUE;
             while (checkConnection) {
 
                 if (!connectionService.checkConnection()) {
@@ -91,35 +94,46 @@ public class LoginScreenController {
     void onLoginButtonClick() throws InterruptedException {
 
         if (connectionStatus) {
-            FXMLLoader innerLoader = new FXMLLoader();
-            innerLoader.setLocation(this.getClass().getResource("/views/MainScreen.fxml"));
+            AuthorizationRepository authorizationRepository = new AuthorizationRepository();
+            AccountDto accountDto = authorizationRepository.login(loginField.getText(), passwordField.getText());
+            if (accountDto != null) {
+
+                FXMLLoader innerLoader = new FXMLLoader();
+                innerLoader.setLocation(this.getClass().getResource("/views/MainScreen.fxml"));
 
 //        ResourceBundle bundle = ResourceBundle.getBundle("gui.resources.lang");
 //        innerLoader.setResources(bundle);
-            try {
-                Parent innerRoot = innerLoader.load();
-                MainScreenController mainScreenController = innerLoader.getController();
+                try {
+                    Parent innerRoot = innerLoader.load();
+                    MainScreenController mainScreenController = innerLoader.getController();
 //            mainScreenController.setClient(client);
 //            mainScreenController.setLocalDatabase(localDatabase);
 //            stage.setTitle("PasswordsManager 1.0.0");
 //            Scene scene = new Scene()
-                scene.setRoot(innerRoot);
-                stage.setScene(scene);
-                stage.setMaximized(true);
-                stage.show();
+                    String a = accountDto.getEmployee().getCompany().getName1() + " "+accountDto.getEmployee().getCompany().getName2();
+                    String b = accountDto.getEmployee().getDivision().getName1();
+                    String c = accountDto.getEmployee().getForename()+ " "+accountDto.getEmployee().getSurname();
+                    mainScreenController.setContextView(a, b, c);
+                    scene.setRoot(innerRoot);
+                    stage.setScene(scene);
+                    stage.setMaximized(true);
+                    stage.show();
 
-                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-                    public void handle(WindowEvent we) {
-                        System.out.println("Stage is closing");
-                        checkConnection = Boolean.FALSE;
-                    }
-                });
+                    stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                        public void handle(WindowEvent we) {
+                            System.out.println("Stage is closing");
+                            checkConnection = Boolean.FALSE;
+                        }
+                    });
 
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 //        }
+            } else {
+                //clear fields and display error msg
+            }
         }
     }
 

@@ -28,4 +28,8 @@ public class CustomerFileRowModelDto {
         this.contact = customer.getContact();
     }
 
+    public String toString(){
+        return forename+" "+surname+" "+address.toString();
+    }
+
 }

@@ -15,7 +15,7 @@ public class AbstractScreenController {
         this.mainScreenController = mainScreenController;
     }
 
-    public void navigateTo(String viewPath){
+    public void navigateTo(String viewPath) {
         FXMLLoader innerLoader = new FXMLLoader();
         innerLoader.setLocation(this.getClass().getResource(viewPath));
 //        ResourceBundle bundle = ResourceBundle.getBundle("gui.resources.lang");
@@ -27,16 +27,13 @@ public class AbstractScreenController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        ServiceRequestEditScreenController serviceRequestEditScreenController = innerLoader.getController();
 
-//        loginScreenController.setMainScreenController(this);
-//        loginScreenController.setLocalDatabase(this.localDatabase);
-//        loginScreenController.setClient(this.client);
+//        controller?
 
         mainScreenController.setView(gridPane);
     }
 
-    public void initData(Integer objectId){
+    public void initData(Integer objectId) {
 
     }
 }

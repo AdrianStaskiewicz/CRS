@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
@@ -14,7 +15,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CustomerAddEditScreenController">
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.VehicleAddEditScreenController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
     </columnConstraints>
@@ -74,14 +77,17 @@
                         <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="90.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="60.0" vgrow="SOMETIMES" />
-                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="120.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <Label text="Dane podstawowe" />
+                        <Label text="Dane o właścicielach" />
                         <GridPane GridPane.rowIndex="4">
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
@@ -96,28 +102,17 @@
                             <rowConstraints>
                                 <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Label text="Miasto" />
-                                <Label text="Ulica" GridPane.columnIndex="4" />
-                                <TextField fx:id="street" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" />
-                                <TextField fx:id="city" GridPane.columnIndex="2" />
-                                <Label text="Nr mieszkania" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                                <Label text="Nr domu" GridPane.rowIndex="1" />
-                                <TextField fx:id="localNumber" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                                <TextField fx:id="houseNumber" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                <Label text="Kod pocztowy" GridPane.rowIndex="2" />
-                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                    <children>
-                                        <TextField fx:id="postCodeFirstPart" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
-                                        <Label alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0" text="-" />
-                                        <TextField fx:id="postCodeSecondPart" alignment="CENTER" />
-                                    </children>
-                                </HBox>
+                                <Label text="VIN" />
+                                <TextField fx:id="vin" GridPane.columnIndex="2" />
+                                <Label text="Numer rejestracyjny" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                <Label text="Rok produkcji" GridPane.rowIndex="1" />
+                                <TextField fx:id="registrationNumber" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                                <TextField fx:id="productionYear" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                             </children>
                         </GridPane>
-                        <Label text="Adres" GridPane.rowIndex="3" />
+                        <Label text="Dane identyfikacyjne pojazdu" GridPane.rowIndex="3" />
                         <GridPane GridPane.rowIndex="1">
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
@@ -133,13 +128,21 @@
                                 <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Label text="Imię" />
-                                <Label text="Nazwisko" GridPane.columnIndex="4" />
-                                <TextField fx:id="surname" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" />
-                                <TextField fx:id="forename" GridPane.columnIndex="2" />
+                                <Label text="Właściciel" />
+                                <Label text="Współwłaściciel" GridPane.columnIndex="4" />
+                                <ComboBox fx:id="owner" styleClass="combo-box" stylesheets="@/styles/ComboBoxStyle.css" prefWidth="200.0" GridPane.columnIndex="2">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </ComboBox>
+                                <ComboBox fx:id="coowner" styleClass="combo-box" stylesheets="@/styles/ComboBoxStyle.css" prefWidth="200.0" GridPane.columnIndex="6">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </ComboBox>
                             </children>
                         </GridPane>
-                        <Label text="Dane kontaktowe" GridPane.rowIndex="6" />
+                        <Label text="Dane podstawowe" GridPane.rowIndex="6" />
                         <GridPane GridPane.rowIndex="7">
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
@@ -154,16 +157,50 @@
                             <rowConstraints>
                                 <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Label text="Telefon" />
-                                <Label text="Fax" GridPane.columnIndex="4" />
-                                <TextField fx:id="fax" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" />
-                                <TextField fx:id="phone" GridPane.columnIndex="2" />
-                                <Label text="Adres e-mail" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                                <Label text="Tel. kom." GridPane.rowIndex="1" />
-                                <TextField fx:id="mailAddress" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                                <TextField fx:id="cellPhone" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                <Label text="Marka" />
+                                <Label text="Model" GridPane.columnIndex="4" />
+                                <TextField fx:id="model" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" />
+                                <TextField fx:id="brand" GridPane.columnIndex="2" />
+                                <Label text="Typ paliwa" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                <Label text="Pojemność silnika" GridPane.rowIndex="1" />
+                                <TextField fx:id="fuelType" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                                <TextField fx:id="engineCapacity" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                <Label text="Moc" GridPane.rowIndex="2" />
+                                <TextField fx:id="power" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                <TextField fx:id="meterState" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                <TextField fx:id="description" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                                <Label text="Licznik km" GridPane.rowIndex="3" />
+                                <Label text="Opis" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                            </children>
+                        </GridPane>
+                        <Label text="Pozostałe dane z dowodu rejestracyjnego" GridPane.rowIndex="9" />
+                        <GridPane GridPane.rowIndex="10">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+                                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="10.0" />
+                                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+                                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="10.0" />
+                                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
+                                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Data ważności" />
+                                <Label text="Aktywny" GridPane.columnIndex="4" />
+                                <DatePicker fx:id="expiredDate" styleClass="date-picker" stylesheets="@/styles/DatePickerStyle.css" GridPane.columnIndex="2">
+                                        <cursor>
+                                            <Cursor fx:constant="HAND" />
+                                        </cursor>
+                                </DatePicker>
+                                <CheckBox fx:id="active" mnemonicParsing="false" GridPane.columnIndex="6" />
                             </children>
                         </GridPane>
                     </children>

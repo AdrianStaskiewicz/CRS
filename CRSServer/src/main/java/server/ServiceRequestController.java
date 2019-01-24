@@ -50,7 +50,7 @@ public class ServiceRequestController {
         QServiceRequest serviceRequest = QServiceRequest.serviceRequest;
         QVehicle vehicle = QVehicle.vehicle;
         QRegistrationCard registrationCard = QRegistrationCard.registrationCard;
-
+//TODO dobra praktyka
         List<ServiceRequestRowModelDto> result = (List<ServiceRequestRowModelDto>) query.select(Projections.constructor(ServiceRequestRowModelDto.class, serviceRequest.id, serviceRequest.insertDate, serviceRequest.serviceRequestNumber, serviceRequest.customer, registrationCard.vin, registrationCard.registrationNumber, serviceRequest.approve, serviceRequest.approveDate))
                 .from(serviceRequest)
                 .leftJoin(vehicle)
